@@ -177,6 +177,9 @@ function App() {
                       setPasswordError('');
                     }}
                     className="password-input"
+                    autoCapitalize="none"
+                    autoCorrect="off"
+                    spellCheck="false"
                   />
                   {passwordError && (
                     <p style={{ color: '#C87961', marginTop: '0.8rem', fontSize: '0.9rem', fontWeight: 500 }}>{passwordError}</p>
@@ -184,10 +187,23 @@ function App() {
                   <button
                     className="elegant-btn mt-8"
                     onClick={() => {
-                      if (passwordInput.trim().toLowerCase() === 'print("23 years")') {
+                      // Normalize the input: remove smart quotes, convert to lower case, and trim
+                      const normalized = passwordInput
+                        .trim()
+                        .toLowerCase()
+                        .replace(/[“”]/g, '"') // Replace smart double quotes
+                        .replace(/[‘’]/g, "'"); // Replace smart single quotes
+                      
+                      // Accept with double quotes, single quotes, or even without quotes if they struggle
+                      const isValid = 
+                        normalized === 'print("23 years")' || 
+                        normalized === "print('23 years')" ||
+                        normalized === 'print(23 years)';
+
+                      if (isValid) {
                         setPhase('celebrate');
                       } else {
-                        setPasswordError('Incorrect password! Try again.');
+                        setPasswordError('Incorrect password! Check quotes and spaces.');
                       }
                     }}
                   >
