@@ -193,10 +193,10 @@ function App() {
                         .toLowerCase()
                         .replace(/[“”]/g, '"') // Replace smart double quotes
                         .replace(/[‘’]/g, "'"); // Replace smart single quotes
-                      
+
                       // Accept with double quotes, single quotes, or even without quotes if they struggle
-                      const isValid = 
-                        normalized === 'print("23 years")' || 
+                      const isValid =
+                        normalized === 'print("23 years")' ||
                         normalized === "print('23 years')" ||
                         normalized === 'print(23 years)';
 
@@ -316,7 +316,7 @@ function App() {
                   <h2 className="glowing-title" style={{ fontSize: 'clamp(1.5rem, 5vw, 2.5rem)', marginBottom: '1.5rem' }}>
                     {isCakeCut ? "Yay! Happy Birthday! 🎉" : "Time to Make a Wish..."}
                   </h2>
-                  
+
                   {!isCakeCut && (
                     <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
                       <button className="elegant-btn" onClick={() => setIsCakeCut(true)}>
@@ -335,21 +335,21 @@ function App() {
                       <div className={`cake-wrapper ${isCakeCut ? 'is-cut' : ''}`}>
                         {/* Tier 3 (Top) */}
                         <div className="cake-tier tier-3">
-                           <div className={`candle ${isCakeCut ? 'off' : ''}`}>
-                             {!isCakeCut && <div className="flame"></div>}
-                           </div>
-                           <div className="cake-piece piece-left"></div>
-                           <div className="cake-piece piece-right"></div>
+                          <div className={`candle ${isCakeCut ? 'off' : ''}`}>
+                            {!isCakeCut && <div className="flame"></div>}
+                          </div>
+                          <div className="cake-piece piece-left"></div>
+                          <div className="cake-piece piece-right"></div>
                         </div>
                         {/* Tier 2 (Middle) */}
                         <div className="cake-tier tier-2">
-                           <div className="cake-piece piece-left"></div>
-                           <div className="cake-piece piece-right"></div>
+                          <div className="cake-piece piece-left"></div>
+                          <div className="cake-piece piece-right"></div>
                         </div>
                         {/* Tier 1 (Bottom) */}
                         <div className="cake-tier tier-1">
-                           <div className="cake-piece piece-left"></div>
-                           <div className="cake-piece piece-right"></div>
+                          <div className="cake-piece piece-left"></div>
+                          <div className="cake-piece piece-right"></div>
                         </div>
                         <div className="knife"></div>
                       </div>
@@ -430,11 +430,11 @@ function App() {
               <h2 className="letter-title" style={{ textAlign: 'center', fontSize: 'clamp(1.5rem, 5vw, 2.2rem)' }}>Rate this application</h2>
               <div className="rating-container mt-10">
                 <div className="rating-value">{appRating}%</div>
-                <input 
-                  type="range" 
-                  min="1" 
-                  max="100" 
-                  value={appRating} 
+                <input
+                  type="range"
+                  min="1"
+                  max="100"
+                  value={appRating}
                   onChange={(e) => setAppRating(e.target.value)}
                   className="rating-slider"
                 />
@@ -458,7 +458,7 @@ function App() {
               <div className="kavitha-content">
                 <div className="kavitha-line fade-in" style={{ animationDelay: '0.5s' }}>
                   <p>Intlo vuntundhi Mancham 🛏️</p>
-                  <p>Nuvve naa Orapancham 🌍</p>
+                  <p>Nuvve naa Prapancham 🌍</p>
                 </div>
                 <div className="kavitha-line fade-in" style={{ animationDelay: '1.5s' }}>
                   <p>kakinada lo famous kurmani</p>
